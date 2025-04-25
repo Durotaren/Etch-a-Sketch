@@ -7,3 +7,18 @@ for (let i = 0; i < 16; i++) {
   // div.textContent = 'Hey';
   container.append(div);
 }
+
+let boxes = document.querySelectorAll('.box');
+
+boxes.forEach((box) => {
+  box.addEventListener('mouseenter', () => 
+    box.style.backgroundColor = 'blue'
+  );
+})
+
+boxes.forEach((box) => {
+  box.addEventListener('mouseleave', () => 
+    box.style.backgroundColor = 'aliceblue'
+  );
+})
+
