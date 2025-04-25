@@ -19,9 +19,10 @@ let button = document.querySelector('button');
 function boxCount() {
   userAnswer = prompt('How many boxes would you like to be on the grid?');
   let boxSize = 640 / userAnswer;
-  boxes.forEach((box) => {
-    box.remove();
-  });
+  if (userAnswer === null || userAnswer > 100 || userAnswer === '') {
+    alert('Please don\'t enter numbers above 100 or empty strings!');
+  } else {
+  container.textContent = '';
   for (let i = 0; i < (userAnswer * userAnswer); i++) {
     let div = document.createElement('div');
     div.classList.add('box');
@@ -39,6 +40,7 @@ function boxCount() {
       box.style.backgroundColor = 'blue'
     );
   });
+}
 }
 
 button.addEventListener('click', boxCount);
